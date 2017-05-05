@@ -13,7 +13,7 @@ module.exports = function (opts) {
     opts.body = "<!-- Hello Mr Developer! We don't serve insecure resources around here."
       + "\n    Please use HTTPS instead. -->";
   }
-  opts.body = opts.body.replace(/{{\s+PORT\s+}}/i, opts.port);
+  opts.body = opts.body.replace(/{{\s+PORT\s+}}/ig, opts.port);
 
   return function (req, res, next) {
     if (req.connection.encrypted
